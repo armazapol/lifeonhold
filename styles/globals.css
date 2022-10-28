@@ -1,3 +1,37 @@
+@font-face {
+  font-family: "BwModelica";
+  src: local("BwModelica"),
+    url(../public/fonts/BwModelica-Bold.otf) format("truetype");
+}
+@font-face {
+  font-family: "LatoRegular";
+  src: local("LatoRegular"),
+    url(../public/fonts/LatoRegular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "MilkyNiceClean";
+  src: local("MilkyNiceClean"),
+    url(../public/fonts/MilkyNiceClean.otf) format("truetype");
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  :root {
+    --input-color: #2f4475;
+    --BwModelica: BwModelica, sans-serif;
+    --LatoRegular: LatoRegular, sans-serif;
+    --MilkyNiceClean: MilkyNiceClean, sans-serif;
+  }
+
+  /* fonts */
+  .font_BwModelica {
+    font-family: var(--BwModelica);
+  }
+  .font_LatoRegular {
+    font-family: var(--LatoRegular);
+  }
+  .font_MilkyNiceClean {
+    font-family: var(--MilkyNiceClean);
+  }
+}
