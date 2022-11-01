@@ -1,11 +1,8 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 import Carousell from "../components/Carousell";
 
-
 const Home: NextPage = () => {
-  return (
- <Carousell/>
-  )
-}
+  return <Carousell  />;
+};
 
-export default Home
+export default Home;

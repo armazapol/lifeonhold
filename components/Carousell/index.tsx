@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import View1 from "../views/View1";
+import Modal from "../Modal";
+import ViewImages from "../Modal/ViewImages";
+
+
 
 const Carousell = (props: any) => {
+  const [stateModalVideo, setStateModalVideo] = useState <boolean>(false);
+  const [stateModalImages, setStateModalImages] = useState <boolean>(false);
+
+  const viewVideo = ()=>{
+    setStateModalVideo(!stateModalVideo)
+  }
+
+  const toggleViewImages = ()=>{
+    setStateModalImages(!stateModalImages)
+  }
+
   return (
     <div {...props}>
+      {stateModalVideo && <Modal viewVideo={viewVideo} />}
+      {stateModalImages && <ViewImages toggleViewImages={toggleViewImages} />}
       <Carousel
         showThumbs={false}
         showStatus={false}
@@ -15,7 +32,7 @@ const Carousell = (props: any) => {
         stopOnHover={false}
         className="rounded-3xl text-white"
       >
-        <View1 />
+        <View1 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
       
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           page 2

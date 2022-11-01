@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 import img1 from "../../public/img/view1/img1.png";
 import img2 from "../../public/img/view1/img2.png";
 import img3 from "../../public/img/view1/img3.png";
@@ -10,7 +10,12 @@ import Button from "../commons/button/Button";
 // import video from '../../public/img/view1/video.mp4';
 // import img5 from '../../public/img/view1/img1.png';
 
-const View1 = () => {
+type Props = {
+  viewVideo: () => void; 
+  toggleViewImages: () => void;
+};
+
+const View1 = ({ viewVideo, toggleViewImages }: Props) => {
   return (
     <div className="w-full h-screen grid grid-cols-3 grid-rows-3">
       <div className="row-span-2 col-span-2 flex items-center justify-center  relative">
@@ -32,18 +37,19 @@ const View1 = () => {
               </p>
               <p>niñas y adolescentes.</p>
             </div>
-          
           </div>
           <div className="flex gap-10 mt-5">
-                <Button text="Play" />
-                <Button text="Compartir" />
-            </div>
+            <Button text="Play" />
+            <Button text="Compartir" />
+          </div>
         </div>
       </div>
       <div className="col-start-3 row-span-3 grid grid-rows-2">
         <div className="flex items-center justify-center  relative">
           <Image alt="img2" src={img2} placeholder="blur" fill />
+          <a onClick={toggleViewImages} className="z-20">
           <Button text="Galería de Fotos" />
+          </a>
         </div>
         <div className="flex items-center justify-center  relative">
           <video
@@ -55,18 +61,24 @@ const View1 = () => {
           >
             <source src="/img/view1/video.mp4" type="video/mp4" />
           </video>
-  
         </div>
       </div>
       <div className="flex items-center justify-center  relative">
         <Image alt="img3" src={img3} placeholder="blur" fill />
-        <Button text="Ver Video" />
+        <a onClick={viewVideo} className="z-20">
+          <Button text="Ver Video" />
+        </a>
       </div>
       <div className="flex items-center justify-center  relative">
         <Image alt="img2" src={img4} placeholder="blur" fill />
-       <a className="z-20" href="https://www.google.com/" target="_blank" rel="noreferrer">
-       <Button text="Web" />
-       </a>
+        <a
+          className="z-20"
+          href="https://www.google.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Button text="Web" />
+        </a>
       </div>
     </div>
   );
