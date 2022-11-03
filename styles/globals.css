@@ -34,4 +34,24 @@
   .font_MilkyNiceClean {
     font-family: var(--MilkyNiceClean);
   }
+
+  /* carousel1 */
+  .carousel1 .control-arrow {
+    height: 50px !important;
+    margin-top: -25px !important;
+    top: 50% !important;
+  }
+  .carousel1 .control-arrow:hover {
+    background-color: transparent !important;
+  }
+  .carousel1 .control-arrow:before {
+    border-top: 20px solid transparent !important;
+    border-bottom: 20px solid transparent !important;
+  }
+  .carousel1 .control-prev.control-arrow:before {
+    border-right: 20px solid #fff !important;
+  }
+  .carousel1 .control-next.control-arrow:before {
+    border-left: 20px solid #fff !important;
+  }
 }
