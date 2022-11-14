@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import img1 from "../../public/img/view1/img1.png";
 import img2 from "../../public/img/view1/img2.png";
 import img3 from "../../public/img/view1/img3.png";

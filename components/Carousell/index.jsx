@@ -8,6 +8,26 @@ import Modal from "../Modal";
 import ViewImages from "../Modal/ViewImages";
 import Menu from "../Menu";
 import View2 from "../views/View2";
+import View5 from "../views/View5";
+import View6 from "../views/View6";
+import View3 from "../views/View3";
+import View4 from "../views/View4";
+import View7 from "../views/View7";
+import View8 from "../views/View8";
+import View9 from "../views/View9";
+import View10 from "../views/View10";
+import View11 from "../views/View11";
+import View12 from "../views/View12";
+import View13 from "../views/View13";
+import View14 from "../views/View14";
+import View15 from "../views/View15";
+import View16 from "../views/View16";
+import View17 from "../views/View17";
+import View18 from "../views/View18";
+import View20 from "../views/View20";
+import View19 from "../views/View19";
+import View21 from "../views/View21";
+import View22 from "../views/View22";
 
 const Carousell = (props) => {
   // const [stateModalVideo, setStateModalVideo] = useState<boolean>(false);
@@ -85,59 +105,47 @@ const Carousell = (props) => {
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View2 />
         </div>
-        <div className="w-full h-screen grid grid-cols-3">
-          <div className="row-span-3 col-span-2 flex items-center justify-center bg-blue-500">
-            text1
-          </div>
-          <div className="flex items-center justify-center bg-red-500">
-            text2
-          </div>
-          <div className="flex items-center justify-center bg-green-500">
-            text3
-          </div>
-          <div className="flex items-center justify-center bg-violet-500">
-            text4
-          </div>
-        </div>
+        <View3 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
-          page 4
+          <View4 />
         </div>
-        <div className="w-full h-screen grid grid-cols-4 grid-rows-4">
-          <div className="row-span-4 col-span-2 flex items-center justify-center bg-blue-500">
-            text1
-          </div>
-          <div className="row-span-2 col-span-2 flex items-center justify-center bg-red-500">
-            text2
-          </div>
-          <div className="row-span-2  flex items-center justify-center bg-pink-500">
-            text3
-          </div>
-          <div className="flex items-center justify-center bg-green-500">
-            text4
-          </div>
-          <div className="flex items-center justify-center bg-violet-500">
-            text5
-          </div>
-        </div>
+        <View5 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+       
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
-          page 6
+        <View6 />
+    
         </div>
-        <div className="w-full h-screen grid grid-cols-12 grid-rows-3">
-          <div className="row-span-2 col-span-7 flex items-center justify-center bg-blue-500">
-            text1
-          </div>
-          <div className="row-span-2 col-span-5 flex items-center justify-center bg-red-500">
-            text2
-          </div>
-          <div className="col-span-4  flex items-center justify-center bg-pink-500">
-            text3
-          </div>
-          <div className="col-span-4 flex items-center justify-center bg-green-500">
-            text4
-          </div>
-          <div className="col-span-4 flex items-center justify-center bg-violet-500">
-            text5
-          </div>
+        <View7 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <div className="w-full h-screen flex items-center justify-center bg-slate-400">
+          <View8 />
+        </div>
+        <View9 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <div className="w-full h-screen flex items-center justify-center bg-slate-400">
+          <View10 />
+        </div>
+        <View11 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <div className="w-full h-screen flex items-center justify-center bg-slate-400">
+          <View12 />
+        </div>
+        <View13 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <div className="w-full h-screen flex items-center justify-center bg-slate-400">
+          <View14 />
+        </div>
+        <View15 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <div className="w-full h-screen flex items-center justify-center bg-slate-400">
+          <View16 />
+        </div>
+        <View17 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <div className="w-full h-screen flex items-center justify-center bg-slate-400">
+          <View18 />
+        </div>
+        <View19 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <div className="w-full h-screen flex items-center justify-center bg-slate-400">
+          <View20 />
+        </div>
+        <View21 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <div className="w-full h-screen flex items-center justify-center bg-slate-400">
+          <View22 />
         </div>
       </Carousel>
       <div
