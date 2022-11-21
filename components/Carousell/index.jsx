@@ -28,6 +28,7 @@ import View20 from "../views/View20";
 import View19 from "../views/View19";
 import View21 from "../views/View21";
 import View22 from "../views/View22";
+import ViewGeneral from "../ViewGeneral";
 
 const Carousell = (props) => {
   // const [stateModalVideo, setStateModalVideo] = useState<boolean>(false);
@@ -38,6 +39,8 @@ const Carousell = (props) => {
   const [stateModalImages, setStateModalImages] = useState(false);
   // const [stateMenu, setStateMenu] = useState(false);
   const [stateHamburger, setStateHamburger] = useState(false);
+  const [stateCarousel, setStateCarousel] = useState(0);
+  const [stateSide, setStateSide] = useState("left");
 
   const menuTimeline = useRef();
 
@@ -64,15 +67,21 @@ const Carousell = (props) => {
     });
     menuTimeline.current.fromTo(
       ".contentMenu",
-      { opacity: 0, display:"none" },
-      
+      { opacity: 0, display: "none" },
+
       {
         opacity: 1,
-        display:"block",
+        display: "block",
         duration: 0.5,
       }
     );
   }, []);
+
+  const updateState = (index) => {
+    // console.log(stateCarousel)
+    index > stateCarousel ? setStateSide("left") : setStateSide("right");
+    setStateCarousel(index);
+  };
 
   useEffect(() => {
     stateHamburger
@@ -86,7 +95,7 @@ const Carousell = (props) => {
       {stateModalImages && <ViewImages toggleViewImages={toggleViewImages} />}
 
       <div className="absolute -bottom-20 -right-20 bg-blue-900/90 rounded-full w-40 h-40 text-white z-40 background">
-        <div className="contentMenu">
+        <div className="contentMenu hidden">
           <Menu />
         </div>
       </div>
@@ -95,55 +104,128 @@ const Carousell = (props) => {
         showThumbs={false}
         showStatus={false}
         showIndicators={false}
-        infiniteLoop={true}
+        // infiniteLoop={true}
         autoPlay={false}
-        stopOnHover={false}
+        transitionTime={2000}
+        onChange={(index) => updateState(index)}
+        // stopOnHover={false}
         className="rounded-3xl text-white carousel1"
       >
-        <View1 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
-
-        <div className="w-full h-screen flex items-center justify-center bg-slate-400">
-          <View2 />
-        </div>
-        <View3 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <View1
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={0}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
+        {/* <View2 keyCarrousel={1} index={stateCarousel} stateSide={stateSide} />    */}
+        <ViewGeneral
+          keyCarrousel={1}
+          index={stateCarousel}
+          stateSide={stateSide}
+          title={`curso lúdico a modo de videojuego.`}
+          text={`Creamos el personaje Salva y mini-juegos ligados a la política de salvaguarda y canales de atención al cuidado de los niños, niñas y adolescentes.`}
+          urlBackground="/img/view1/img1.png"
+          urlLogo="/img/view1/logo.png"
+        />
+        <View3
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={2}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View4 />
         </div>
-        <View5 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
-       
+        <View5
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={4}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
+
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
-        <View6 />
-    
+          <View6 />
         </div>
-        <View7 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <View7
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={6}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View8 />
         </div>
-        <View9 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <View9
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={8}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View10 />
         </div>
-        <View11 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <View11
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={10}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View12 />
         </div>
-        <View13 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <View13
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={12}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View14 />
         </div>
-        <View15 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <View15
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={14}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View16 />
         </div>
-        <View17 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <View17
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={16}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View18 />
         </div>
-        <View19 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <View19
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={18}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View20 />
         </div>
-        <View21 viewVideo={viewVideo} toggleViewImages={toggleViewImages} />
+        <View21
+          viewVideo={viewVideo}
+          toggleViewImages={toggleViewImages}
+          keyCarrousel={20}
+          index={stateCarousel}
+          stateSide={stateSide}
+        />
         <div className="w-full h-screen flex items-center justify-center bg-slate-400">
           <View22 />
         </div>

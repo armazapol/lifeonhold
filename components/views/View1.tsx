@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import { gsap } from "gsap";
 import img1 from "../../public/img/view1/img1.png";
 import img2 from "../../public/img/view1/img2.png";
 import img3 from "../../public/img/view1/img3.png";
@@ -12,35 +13,74 @@ import Button from "../commons/button/Button";
 type Props = {
   viewVideo: () => void;
   toggleViewImages: () => void;
+  keyCarrousel: number;
+  index: number;
+  stateSide: string;
 };
 
-const View1 = ({ viewVideo, toggleViewImages }: Props) => {
+const View1 = ({
+  viewVideo,
+  toggleViewImages,
+  keyCarrousel,
+  index,
+  stateSide,
+}: Props) => {
+  useEffect(() => {
+    // console.log(keyCarrousel, index)
+    if (keyCarrousel === index) {
+      if (stateSide === "left") {
+        gsap.fromTo(
+          ".animate_logo",
+          { x: "50%", opacity: 0 },
+          { x: 0, opacity: 1, duration: 1.5, delay: 1.2 }
+        );
+        gsap.fromTo(
+          ".animate_component",
+          { x: "50%", opacity: 0 },
+          { x: 0, opacity: 1, duration: 1.5, delay: 1.5 }
+        );
+      } else {
+        gsap.fromTo(
+          ".animate_logo",
+          { x: "-50%", opacity: 0 },
+          { x: 0, opacity: 1, duration: 1.5, delay: 1.2 }
+        );
+        gsap.fromTo(
+          ".animate_component",
+          { x: "-50%", opacity: 0 },
+          { x: 0, opacity: 1, duration: 1.5, delay: 1.5 }
+        );
+      }
+    }
+  }, [index]);
   return (
-    <div className="w-full h-screen grid grid-cols-3 grid-rows-3">
+    <div className="w-full h-screen grid grid-cols-3 grid-rows-3 z-20">
       <div className="row-span-2 col-span-2 flex items-center justify-center  relative">
         <Image alt="img1" src={img1} placeholder="blur" fill />
         <div className="bg-black/30 absolute z-10 w-full h-full hover:bg-transparent transition-all duration-700"></div>
-        <div className="flex flex-col z-20 relative items-center">
-          <div className="w-52 ">
+        <div className="flex flex-col z-20 relative items-center  ">
+          <div className="w-52 opacity-0 animate_logo">
             <Image alt="logo" src={logo} placeholder="empty" />
           </div>
-          <div className="">
-            <p className="uppercase font_MilkyNiceClean text-2xl py-5">
-              curso lúdico a modo de videojuego.
-            </p>
-            <div className="font_LatoRegular text-lg leading-tight">
-              <p>
-                Creamos el personaje Salva y mini-juegos ligados a la política
+          <div className="animate_component opacity-0 flex items-center flex-col">
+            <div className=" ">
+              <p className="uppercase font_MilkyNiceClean text-2xl py-5">
+                curso lúdico a modo de videojuego.
               </p>
-              <p>
-                de salvaguarda y canales de atención al cuidado de los niños,{" "}
-              </p>
-              <p>niñas y adolescentes.</p>
+              <div className="font_LatoRegular text-lg leading-tight">
+                <p>
+                  Creamos el personaje Salva y mini-juegos ligados a la política
+                </p>
+                <p>
+                  de salvaguarda y canales de atención al cuidado de los niños,{" "}
+                </p>
+                <p>niñas y adolescentes.</p>
+              </div>
             </div>
-          </div>
-          <div className="flex gap-10 mt-5">
-            <Button text="Play" />
-            <Button text="Compartir" />
+            <div className="flex gap-10 mt-5">
+              <Button text="Play" />
+              <Button text="Compartir" />
+            </div>
           </div>
         </div>
       </div>

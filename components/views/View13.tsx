@@ -17,11 +17,11 @@ const View13 = ({ viewVideo, toggleViewImages }: Props) => {
   return (
     <div className="w-full h-screen grid grid-cols-4 grid-rows-4">
       <div className="row-span-4 col-span-2 flex items-center justify-center bg-blue-500 relative">
-        <Image alt="img1" src={img1} placeholder="blur" fill />
+        <Image className="object-cover" alt="img1" src={img1} placeholder="blur" fill />
         <div className="bg-black/30 absolute z-10 w-full h-full hover:bg-transparent transition-all duration-700"></div>
         <div className="flex flex-col z-20 relative items-center">
           <div className="w-52 ">
-            <Image alt="logo" src={logo} placeholder="empty" />
+            <Image  alt="logo" src={logo} placeholder="empty" />
           </div>
           <div className="">
             <p className="uppercase font_MilkyNiceClean text-2xl py-5">

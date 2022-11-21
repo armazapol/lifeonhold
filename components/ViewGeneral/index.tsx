@@ -1,17 +1,21 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
-import img1 from "../../public/img/view1/img1.png";
+// import img1 from "../../public/img/view1/img1.png";
 import Image from "next/image";
-import logo from "../../public/img/view1/logo.png";
+// import logo from "../../public/img/view1/logo.png";
 import Button from "../commons/button/Button";
 
 type Props = {
   keyCarrousel: number;
   index: number;
   stateSide: string;
+  title:string;
+  urlLogo:string;
+  urlBackground: string;
+  text:string;
 };
 
-const View2 = ({ keyCarrousel, index, stateSide }: Props) => {
+const ViewGeneral = ({ keyCarrousel, index, stateSide, title, urlLogo, urlBackground, text }: Props) => {
   useEffect(() => {
     // console.log(keyCarrousel, index)
     if (keyCarrousel === index) {
@@ -43,7 +47,10 @@ const View2 = ({ keyCarrousel, index, stateSide }: Props) => {
   }, [index]);
   return (
     <div
-      className={`w-full h-screen flex items-center justify-center z-10 bg-[url('/img/view1/img1.png')] bg-fixed bg-no-repeat animate_background `}
+      className={`w-full h-screen flex items-center justify-center z-10 bg-fixed bg-no-repeat animate_background `}
+      style={{ 
+        backgroundImage: `url(${urlBackground})` 
+      }}
     >
       {/* <Image
         className="animate_background "
@@ -54,16 +61,16 @@ const View2 = ({ keyCarrousel, index, stateSide }: Props) => {
       /> */}
       {/* <img className="fixed w-full h-full z-20 " src="/img/view1/img1.png" alt="" /> */}
       <div className="flex flex-col z-20 relative items-center w-[30rem] ">
-        <div className="w-52 ">
-          <Image alt="logo" src={logo} placeholder="empty" />
+        <div className="w-52 relative h-40">
+          <Image  alt="logo" src={urlLogo} placeholder="empty" fill  />
         </div>
         <div className="">
           <p className="uppercase font_MilkyNiceClean text-2xl py-5">
-            curso lúdico a modo de videojuego.
+            {title}
           </p>
           <div className="font_LatoRegular text-lg leading-tight">
             <p>
-              Creamos el personaje Salva y mini-juegos ligados a la política de salvaguarda y canales de atención al cuidado de los niños, niñas y adolescentes.
+            {text}
             </p>
           </div>
         </div>
@@ -76,4 +83,4 @@ const View2 = ({ keyCarrousel, index, stateSide }: Props) => {
   );
 };
 
-export default View2;
+export default ViewGeneral;

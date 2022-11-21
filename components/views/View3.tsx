@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { gsap } from "gsap";
 import img1 from "../../public/img/portfolio/mdcc/img1.png";
 import img2 from "../../public/img/portfolio/mdcc/img2.png";
 import img3 from "../../public/img/portfolio/mdcc/img3.png";
@@ -17,7 +18,7 @@ type Props = {
 
 const View3 = ({ viewVideo, toggleViewImages }: Props) => {
   return (
-    <div className="w-full h-screen grid grid-cols-3 grid-rows-3">
+    <div className="w-full h-screen grid grid-cols-3 grid-rows-3 z-20">
       <div className="row-span-2 col-span-2 flex items-center justify-center  relative">
         <Image alt="img1" src={img5} placeholder="blur" fill />
         <div className="bg-black/30 absolute z-10 w-full h-full hover:bg-transparent transition-all duration-700"></div>
